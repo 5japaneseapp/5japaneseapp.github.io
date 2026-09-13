@@ -266,3 +266,53 @@ footer .foot-meta { color: var(--ink-soft); font-size: 11.5px; }
   .card { padding: 44px 40px; }
   .hero { padding: 72px 0 48px; }
 }
+
+/* ---------- Legal documents (Privacy Policy, Terms & Conditions) ----------
+   Additive only — new class names, doesn't touch any homepage selector above.
+   Left-aligned long-form reading layout inside the same .card/.wrap shell the
+   rest of the site already uses, so these pages feel consistent with it. */
+.legal-doc {
+  text-align: left;
+  max-width: 68ch;
+  margin: 0 auto;
+}
+.legal-doc h1 {
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 800;
+  margin: 0 0 6px;
+  text-align: center;
+}
+.legal-doc .legal-updated {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 13px;
+  margin: 0 0 28px;
+}
+.legal-doc .legal-intro {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  margin: 0 0 28px;
+}
+.legal-doc h2 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 30px 0 8px;
+  color: var(--indigo);
+}
+.legal-doc p, .legal-doc li {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.65;
+}
+.legal-doc p { margin: 0 0 12px; }
+.legal-doc ul { margin: 0 0 12px; padding-left: 22px; }
+.legal-doc li { margin-bottom: 6px; }
+.legal-doc a { font-weight: 600; }
+.legal-doc .legal-note {
+  margin-top: 32px;
+  padding: 14px 16px;
+  background: var(--indigo-tint);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: var(--indigo-soft);
+}
