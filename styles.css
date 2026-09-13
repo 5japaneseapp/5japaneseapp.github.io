@@ -69,7 +69,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--indigo); outlin
   justify-content: center;
   flex-shrink: 0;
 }
-.brand-mark svg { display: block; }
+.brand-mark svg, .brand-mark img { display: block; }
 .brand-name {
   font-weight: 800;
   font-size: 15.5px;
