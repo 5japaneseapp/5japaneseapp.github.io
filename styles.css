@@ -1,0 +1,268 @@
+/* 5JAPANESE — shared site styles. Plain CSS, no build step, no framework.
+   Palette reused directly from the 5KANA app's own default (light) theme tokens,
+   so the website and the app share one visual identity rather than inventing a new one. */
+
+:root {
+  --bg: #E9E1CE;        /* app's --surface-well */
+  --surface: #FFFFFF;    /* app's --surface */
+  --surface-alt: #EDE7D6;
+  --ink: #1F2430;        /* app's --ink */
+  --ink-soft: #52596A;   /* darkened slightly from the app's --ink-soft for AA contrast on white */
+  --indigo: #22395C;     /* app's --indigo (brand/primary) */
+  --indigo-soft: #3E5878;
+  --indigo-tint: #EAF0F6;
+  --gold: #C99A3E;       /* app's --gold (used for the same "optional/support" accent role as in-app) */
+  --gold-tint: #FBF3E2;
+  --border: #E2DAC7;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --max-width: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--indigo); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+
+.wrap {
+  width: min(var(--max-width), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  padding: 18px 0;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.brand-mark svg { display: block; }
+.brand-name {
+  font-weight: 800;
+  font-size: 15.5px;
+  letter-spacing: .01em;
+}
+nav.primary-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+nav.primary-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+nav.primary-nav a:hover { background: var(--surface); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 48px 0 36px;
+  text-align: center;
+}
+.hero-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero h1 {
+  font-size: clamp(26px, 6vw, 34px);
+  font-weight: 800;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+.hero .tagline {
+  font-size: clamp(15px, 3.6vw, 18px);
+  font-weight: 600;
+  color: var(--indigo-soft);
+  margin: 0 0 14px;
+}
+.hero p.lede {
+  max-width: 46ch;
+  margin: 0 auto 22px;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--indigo);
+  padding: 10px 18px;
+  border: 1.5px solid var(--indigo);
+  border-radius: 999px;
+}
+.hero-cta:hover { background: var(--indigo); color: #fff; }
+
+/* ---------- Generic section card ---------- */
+section.card-section {
+  padding: 8px 0 40px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  text-align: center;
+}
+.card h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+.card .desc {
+  color: var(--ink-soft);
+  font-size: 15px;
+  max-width: 44ch;
+  margin: 0 auto 22px;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--indigo-soft);
+  background: var(--indigo-tint);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+/* ---------- Google Play placeholder badge ---------- */
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-family: inherit;
+  cursor: default;
+}
+.store-badge[disabled] { opacity: 1; }
+.store-badge svg { flex-shrink: 0; }
+.store-badge .store-text { text-align: left; line-height: 1.15; }
+.store-badge .store-text .small { display: block; font-size: 10px; opacity: .85; }
+.store-badge .store-text .big { display: block; font-size: 15px; font-weight: 700; }
+.store-note { margin: 10px 0 0; font-size: 12px; color: var(--ink-soft); }
+
+/* ---------- More is coming soon ---------- */
+.more-note {
+  text-align: center;
+  padding: 4px 0 36px;
+  color: var(--ink-soft);
+  font-size: 13.5px;
+}
+
+/* ---------- Support section accent (reuses the app's own --gold "optional support" treatment) ---------- */
+.card.support {
+  background: var(--gold-tint);
+  border-color: var(--gold);
+}
+.support-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink); /* dark text on gold for AA contrast (white measured 2.57:1, fails) */
+  background: var(--gold);
+  padding: 11px 22px;
+  border-radius: 999px;
+}
+.support-cta:hover { filter: brightness(0.94); }
+
+/* ---------- Footer ---------- */
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0 40px;
+}
+footer.site-footer .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+footer .foot-brand { font-weight: 800; font-size: 14px; }
+footer nav.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 4px;
+}
+footer nav.foot-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 8px;
+}
+footer nav.foot-links a:hover { color: var(--indigo); text-decoration: underline; }
+footer .foot-social { display: flex; gap: 14px; }
+footer .foot-social a {
+  color: var(--ink-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .foot-social a:hover { color: var(--indigo); }
+footer .foot-meta { color: var(--ink-soft); font-size: 11.5px; }
+
+/* ---------- Simple placeholder pages (e.g. terms.html) ---------- */
+.placeholder-page { padding: 56px 0; text-align: center; }
+.placeholder-page h1 { font-size: 24px; font-weight: 800; margin: 0 0 10px; }
+.placeholder-page p { color: var(--ink-soft); max-width: 44ch; margin: 0 auto 18px; }
+.back-link { font-size: 13.5px; font-weight: 600; }
+
+@media (min-width: 640px) {
+  .card { padding: 44px 40px; }
+  .hero { padding: 72px 0 48px; }
+}
