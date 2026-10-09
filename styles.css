@@ -384,3 +384,7 @@ footer .foot-meta { color: var(--ink-soft); font-size: 11.5px; }
 .follow-links a span { font-size: 11.5px; font-weight: 500; color: var(--ink-soft); }
 .follow-links a:hover { border-color: var(--indigo); color: var(--indigo); }
 @media (max-width: 439px) { .follow-links a { flex: 1 1 calc(50% - 8px); } }
+
+/* ---------- Google Play badge as a live link (homepage) — additive only ---------- */
+a.store-badge { text-decoration: none; cursor: pointer; }
+a.store-badge:hover { background: var(--indigo-soft); }
