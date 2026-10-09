@@ -388,3 +388,23 @@ footer .foot-meta { color: var(--ink-soft); font-size: 11.5px; }
 /* ---------- Google Play badge as a live link (homepage) — additive only ---------- */
 a.store-badge { text-decoration: none; cursor: pointer; }
 a.store-badge:hover { background: var(--indigo-soft); }
+
+/* ---------- Analytics consent banner — additive only ---------- */
+.consent-banner {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 1000;
+  max-width: 460px; margin: 0 auto; padding: 16px 18px;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  box-shadow: 0 8px 30px rgba(31, 36, 48, .22);
+}
+.consent-banner h2 { font-size: 16px; margin: 0 0 6px; }
+.consent-banner p { font-size: 14px; line-height: 1.45; margin: 0 0 12px; color: var(--ink-soft); }
+.consent-banner a { color: var(--indigo); }
+.consent-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.consent-btn {
+  flex: 1 1 140px; min-height: 44px; padding: 8px 14px; cursor: pointer;
+  font: inherit; font-weight: 700; font-size: 14px; color: var(--indigo);
+  background: transparent; border: 1.5px solid var(--indigo); border-radius: 999px;
+}
+.consent-btn:hover { background: var(--indigo-soft); color: #fff; }
+.consent-btn:focus-visible { outline: 3px solid var(--indigo); outline-offset: 2px; }
